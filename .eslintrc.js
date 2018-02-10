@@ -1,15 +1,32 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "rules":{
-      "no-console": 0,
-      "no-var": "error",
-      "no-undef": 0,
-      "indent": [
-          "error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }
+    extends: 'airbnb-base',
+    env: {
+      browser: true,
+      es6: true,
+      node: true,
+      jest: true,
+    },
+    parserOptions: {
+      sourceType: 'module',
+    },
+    rules: {
+      indent: [
+        'error',
+        2,
       ],
-      "prefer-const": 0,
-      "prefer-rest-params": 0,
-      "no-shadow": 0
-
-  }
-};
+      'linebreak-style': [
+        'error',
+        'unix',
+      ],
+      quotes: [
+        'error',
+        'single',
+      ],
+      semi: [
+        'error',
+        'always',
+      ],
+      'no-console': 0,
+    },
+  };
+  
