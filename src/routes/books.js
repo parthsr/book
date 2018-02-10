@@ -1,13 +1,13 @@
-const getBooks = () => {
-  '' 
-;};
+const getBooksWithRating = require('../helpers/getBooksWithRating');
+
 
 module.exports = [{
   path: '/books',
   method: 'GET',
   handler: (request, reply) => {
-    const toReply = getBooks();
-    reply(toReply);
+    const toReply = getBooksWithRating();
+    toReply.then((response) => {
+      reply(response);
+    });
   },
 }];
-

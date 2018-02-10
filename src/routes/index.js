@@ -1,4 +1,4 @@
-// const books = require('./books');
+const books = require('./books');
 
 
 module.exports = [{
@@ -7,4 +7,4 @@ module.exports = [{
   handler: (request, reply) => {
     reply('HelloWorld');
   },
-}];
+}].concat(books);
