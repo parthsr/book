@@ -4,14 +4,17 @@
     "password": "root",
     "database": "booksdatabase",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
+
   },
   "test": {
     "username": "parth",
     "password": "root",
-    "database": "booksdatabase",
+    "database": "booksdatabase_test",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorsAliases": false
   },
   "production": {
     "username": "parth",

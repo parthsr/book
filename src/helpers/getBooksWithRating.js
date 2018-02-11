@@ -10,4 +10,5 @@ const getBooksWithRating = () => rp(' https://5gj1qvkc5h.execute-api.us-east-1.a
     return bookArray;
   });
 });
+
 module.exports = getBooksWithRating;

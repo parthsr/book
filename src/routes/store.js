@@ -4,10 +4,8 @@ module.exports = [{
   path: '/store',
   method: 'POST',
   handler: (request, reply) => {
-    const toReply = getBooksWithRating();
-    toReply.then((response) => {
-      reply(response);
-    });
+    storeFunc();
+    reply('books in the database is stored');
   },
 }];
 
