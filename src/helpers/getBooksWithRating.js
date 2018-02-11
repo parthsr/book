@@ -7,13 +7,7 @@ const getBooksWithRating = () => rp(' https://5gj1qvkc5h.execute-api.us-east-1.a
     for (let i = 0; i < bookArray.length; i += 1) {
       bookArray[i].rating = JSON.parse(rating[i]).rating;
     }
-    const bookArrayWithRating = bookArray.reduce((accumulator, book) => {
-      const tempAcc = accumulator;
-      (tempAcc[book.Author] = accumulator[book.Author] || []).push(book);
-      return tempAcc;
-    }, {});
-    return (bookArrayWithRating);
+    return bookArray;
   });
 });
-
 module.exports = getBooksWithRating;
