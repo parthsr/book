@@ -1,5 +1,6 @@
 const books = require('./books');
 const store = require('./store');
+const like = require('./like');
 
 module.exports = [{
   method: 'GET',
@@ -7,4 +8,4 @@ module.exports = [{
   handler: (request, reply) => {
     reply('HelloWorld');
   },
-}].concat(books).concat(store);
+}].concat(books).concat(store).concat(like);

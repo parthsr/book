@@ -1,5 +1,5 @@
-const getBooksWithRating = require('../helpers/getBooksWithRating');
 const Models = require('../../models');
+const getBooksWithRating = require('../helpers/getBooksWithRating');
 
 const storeFunc = () => {
   getBooksWithRating().then((bookArray) => {
