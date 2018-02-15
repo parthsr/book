@@ -4,8 +4,12 @@ module.exports = [{
   path: '/store',
   method: 'POST',
   handler: (request, reply) => {
-    storeFunc();
-    reply('books in the database is stored');
+    const storePromise = storeFunc();
+    storePromise.then((successMessage) => {
+      reply(successMessage).code(200);
+    }).catch(() => {
+      reply('database transaction failed').code(500);
+    });
   },
 }];
 
