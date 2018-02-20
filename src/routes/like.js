@@ -2,7 +2,7 @@ const Models = require('../../models');
 
 module.exports = [{
   method: 'POST',
-  path: '/like/{bookid}/{likestatus}',
+  path: '/opinion/{bookid}/{likestatus}',
   handler: (request, reply) => {
     const bookid = Number(request.params.bookid);
     const { likestatus } = request.params;

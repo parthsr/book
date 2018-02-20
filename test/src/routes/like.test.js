@@ -11,7 +11,7 @@ describe('checking for api endpoint /like for creating first time', () => {
   it('checking for the status code when creating for like', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/like',
+      url: '/opinion/1/like',
     };
     server.inject(options, (response) => {
       expect(response.statusCode).toBe(201);
@@ -21,7 +21,7 @@ describe('checking for api endpoint /like for creating first time', () => {
   it('checking for the body when creating for like', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/like',
+      url: '/opinion/1/like',
     };
     server.inject(options, (response) => {
       expect(response.payload).toBe('Created!');
@@ -32,7 +32,7 @@ describe('checking for api endpoint /like for creating first time', () => {
   it('checking for the status code for dislike', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/dislike',
+      url: '/opinion/1/dislike',
     };
     server.inject(options, (response) => {
       expect(response.statusCode).toBe(201);
@@ -42,7 +42,7 @@ describe('checking for api endpoint /like for creating first time', () => {
   it('checking for the body for dislike', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/dislike',
+      url: '/opinion/1/dislike',
     };
     server.inject(options, (response) => {
       expect(response.payload).toBe('Created!');
@@ -61,7 +61,7 @@ describe('checking for api endpoint /like for creating again and again', () => {
   it('checking for the status code when creating for like', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/like',
+      url: '/opinion/1/like',
     };
     server.inject(options, (response) => {
       expect(response.statusCode).toBe(201);
@@ -71,7 +71,7 @@ describe('checking for api endpoint /like for creating again and again', () => {
   it('checking for the body when creating for like', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/like',
+      url: '/opinion/1/like',
     };
     server.inject(options, (response) => {
       expect(response.payload).toBe('Updated!');
@@ -82,7 +82,7 @@ describe('checking for api endpoint /like for creating again and again', () => {
   it('checking for the status code for dislike', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/dislike',
+      url: '/opinion/1/dislike',
     };
     server.inject(options, (response) => {
       expect(response.statusCode).toBe(200);
@@ -92,7 +92,7 @@ describe('checking for api endpoint /like for creating again and again', () => {
   it('checking for the body for dislike', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/dislike',
+      url: '/opinion/1/dislike',
     };
     server.inject(options, (response) => {
       expect(response.payload).toBe('Updated!');
@@ -117,7 +117,7 @@ describe('checking if the inserting really happens or not', () => {
   it('checking if inserted', (done) => {
     const options = {
       method: 'POST',
-      url: '/like/1/like',
+      url: '/opinion/1/like',
     };
     server.inject(options, () => {
       Models.likestable.findAll().then((records) => {
