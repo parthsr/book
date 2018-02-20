@@ -1,14 +1,15 @@
-'use strict';
+
+
 module.exports = (sequelize, DataTypes) => {
-  var likestable = sequelize.define('likestable', {
+  let likestable = sequelize.define('likestable', {
     bookid: DataTypes.INTEGER,
-    likestatus: DataTypes.INTEGER
+    likestatus: DataTypes.STRING,
   }, {
     classMethods: {
-      associate: function(models) {
+      associate(models) {
         // associations can be defined here
-      }
-    }
+      },
+    },
   });
   return likestable;
 };

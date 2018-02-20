@@ -1,7 +1,7 @@
 const server = require('../../../src/server');
 const Models = require('../../../models');
 
-describe('cvhecking if the server works or not', () => {
+describe('checking if the server works or not', () => {
   afterAll((done) => {
     Models.booksdb.destroy({ truncate: true }).then(() => {
       console.log('deleted wohoo');
@@ -26,6 +26,18 @@ describe('cvhecking if the server works or not', () => {
     server.inject(options, (response) => {
       expect(response.result).toBe('database updated');
       done();
+    });
+  });
+  test('checking if the database is updated or not with findall', (done) => {
+    const options = {
+      url: '/store',
+      method: 'POST',
+    };
+    server.inject(options, () => {
+      Models.booksdb.findAll().then((records) => {
+        expect(records.length).toBe(12);
+        done();
+      });
     });
   });
 });

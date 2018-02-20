@@ -1,7 +1,7 @@
-'use strict';
+
+
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('likestables', {
+  up: (queryInterface, Sequelize) => queryInterface.createTable('likestables', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       likestatus: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -22,9 +22,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
-  },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('likestables');
-  }
+    }),
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('likestables'),
 };

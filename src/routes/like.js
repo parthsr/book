@@ -5,7 +5,7 @@ module.exports = [{
   path: '/like/{bookid}/{likestatus}',
   handler: (request, reply) => {
     const bookid = Number(request.params.bookid);
-    const likestatus = Number(request.params.likestatus);
+    const { likestatus } = request.params;
     Models.likestable.upsert({
       id: bookid,
       bookid,
