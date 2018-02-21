@@ -13,10 +13,7 @@ const storeFunc = () => getBooksWithRating().then((bookArray) => {
     return newBook;
   });
   Models.booksdb.destroy({ truncate: true });
-  return Models.booksdb.bulkCreate(newBookArray).then(() => {
-    console.log('database updated');
-    return ('database updated');
-  });
+  return Models.booksdb.bulkCreate(newBookArray);
 });
 
 module.exports = storeFunc;
